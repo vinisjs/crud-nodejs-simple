@@ -2,10 +2,19 @@ import express from "express";
 
 const app = express();
 const port = 3000;
+app.use(express.json());
 
-// HTTP -> GET POST PUT DELETE
+// Tipos de parâmetros
+// -------------------
+// Query Params
+// Route Params :
+// Request Body
 
 app.get("/users", (request, response) => {
+  const query = request.query;
+
+  console.log(query);
+
   return response.json({
     users: [
       {
@@ -23,10 +32,17 @@ app.get("/users", (request, response) => {
 });
 
 app.post("/users", (request, response) => {
+  const body = request.body;
+
+  console.log(body);
   return response.json([{ message: "Created" }]);
 });
 
-app.put("/users", (request, response) => {
+app.put("/users:id", (request, response) => {
+  const params = request.params;
+
+  console.log(params);
+
   return response.json([{ message: "Updated" }]);
 });
 
