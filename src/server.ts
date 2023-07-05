@@ -22,6 +22,18 @@ app.get("/users", (request, response) => {
   });
 });
 
+app.post("/users", (request, response) => {
+  return response.json([{ message: "Created" }]);
+});
+
+app.put("/users", (request, response) => {
+  return response.json([{ message: "Updated" }]);
+});
+
+app.delete("/users", (request, response) => {
+  return response.json([{ message: "Deleted" }]);
+});
+
 app.listen(port, () => {
   console.log(`Server running in http://localhost:${port}`);
 });
