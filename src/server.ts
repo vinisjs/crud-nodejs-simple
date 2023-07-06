@@ -46,7 +46,7 @@ app.put("/users:id", (request, response) => {
   return response.json([{ message: "Updated" }]);
 });
 
-app.delete("/users", (request, response) => {
+app.delete("/users:id", (request, response) => {
   return response.json([{ message: "Deleted" }]);
 });
 
